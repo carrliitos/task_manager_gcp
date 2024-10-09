@@ -25,3 +25,51 @@ MySQL database, and Python is used to manage backend logic, including APIs, user
 - **User Authentication**: Register/login users.
 - **CRUD Functionality**: Create, update, and delete tasks. Mark tasks as complete or set deadlines.
 - **Task Categorization**: Users can group tasks by projects or categories.
+
+## Project Structure:
+
+```
+task_manager_gcp/
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py        # Initialization for Flask/Django app
+│   │   ├── models.py          # SQLAlchemy models for database entities
+│   │   ├── routes/
+│   │   │   ├── __init__.py    # Initialization for routes
+│   │   │   ├── auth.py        # Authentication routes (login, register)
+│   │   │   ├── tasks.py       # Task-related API endpoints
+│   │   └── utils/
+│   │       ├── __init__.py    # Initialization for utilities
+│   │       ├── db.py          # Database connection and ORM setup
+│   │       └── auth.py        # Authentication utilities (JWT, etc.)
+│   ├── config.py              # Configuration settings (Google Cloud, database, etc.)
+│   └── main.py                # Main entry point for the backend application
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html         # Main HTML file
+│   │   ├── css/
+│   │   │   └── styles.css     # Stylesheet
+│   │   └── js/
+│   │       └── main.js        # JavaScript logic for frontend
+│   ├── src/
+│   │   ├── components/        # Reusable components (if using React/Vue)
+│   │   ├── pages/             # Page-specific components
+│   │   └── App.js             # Main React/Vue component
+│   └── package.json           # Dependencies for frontend framework
+│
+├── migrations/
+│   └── ...                    # Database migration files (if using Flask-Migrate/Django)
+│
+├── tests/
+│   ├── test_auth.py           # Tests for authentication
+│   ├── test_tasks.py          # Tests for task management features
+│   └── ...
+│
+├── Dockerfile                 # Dockerfile for containerizing the application
+├── docker-compose.yml         # Docker Compose file for multi-container setup (backend, frontend, database)
+├── requirements.txt           # Python dependencies
+├── .env                       # Environment variables (secret keys, DB credentials, etc.)
+└── README.md                  # Project overview and setup instructions
+```
